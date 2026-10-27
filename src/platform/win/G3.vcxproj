@@ -25,6 +25,9 @@
     <ClCompile><WarningLevel>Level3</WarningLevel><TreatWarningAsError>true</TreatWarningAsError><DisableSpecificWarnings>4100;4244;4554;%(DisableSpecificWarnings)</DisableSpecificWarnings><SDLCheck>false</SDLCheck><PreprocessorDefinitions>GAPI_OGL;NDEBUG;XPORT_DISABLE_FUNCTION_MARKERS;_CRT_SECURE_NO_WARNINGS;FULL_NAME=&quot;Gex 3&quot;;WND_TITLE=&quot;Gex 3 (xport)&quot;;WND_WIDTH=960;WND_HEIGHT=720;FIELD_RATE=60;%(PreprocessorDefinitions)</PreprocessorDefinitions><AdditionalIncludeDirectories>$(ProjectDir)..\..;$(ProjectDir)..\..\..\..\xport\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><CompileAs>CompileAsC</CompileAs><Optimization>MinSpace</Optimization><RuntimeLibrary>MultiThreaded</RuntimeLibrary><FunctionLevelLinking>true</FunctionLevelLinking><IntrinsicFunctions>true</IntrinsicFunctions><MultiProcessorCompilation>true</MultiProcessorCompilation><AdditionalOptions>/Gw /Gs2147483647 %(AdditionalOptions)</AdditionalOptions><ExceptionHandling>false</ExceptionHandling><BufferSecurityCheck>false</BufferSecurityCheck><OmitFramePointers>true</OmitFramePointers><RuntimeTypeInfo>false</RuntimeTypeInfo><ControlFlowGuard>false</ControlFlowGuard></ClCompile>
     <Link><SubSystem>Windows</SubSystem><GenerateDebugInformation>false</GenerateDebugInformation><ImportLibrary>$(IntDir)G3.lib</ImportLibrary><EnableCOMDATFolding>true</EnableCOMDATFolding><OptimizeReferences>true</OptimizeReferences><AdditionalDependencies>opengl32.lib;user32.lib;gdi32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies><RandomizedBaseAddress>false</RandomizedBaseAddress><FixedBaseAddress>true</FixedBaseAddress><ImageHasSafeExceptionHandlers Condition="'$(Platform)'=='Win32'">false</ImageHasSafeExceptionHandlers><GenerateManifest>false</GenerateManifest><DataExecutionPrevention>true</DataExecutionPrevention></Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile><PreprocessorDefinitions>XPORT_AUDIO_VBLANK_QUEUE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup><ClCompile Include="..\..\game_main.c" /><ClCompile Include="..\..\..\..\xport\src\psx.c" /><ClCompile Include="..\..\..\..\xport\src\psx_gpu.c" /><ClCompile Include="..\..\..\..\xport\src\vid_ogl.c" /><ClCompile Include="..\..\..\..\xport\src\psx_spu.c" /><ClCompile Include="..\..\..\..\xport\src\psx_xa.c" /><ClCompile Include="..\..\..\..\xport\src\xport_trace.c" /><ClCompile Include="..\..\..\..\xport\src\platform\win\main.c"><PreprocessorDefinitions>SHORT_NAME=&quot;G3&quot;;%(PreprocessorDefinitions)</PreprocessorDefinitions><ObjectFileName>$(IntDir)xport_main.obj</ObjectFileName></ClCompile></ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc">
@@ -51,6 +54,71 @@
     <MASM Include="..\..\..\..\xport\src\platform\win\xcrt_x64.asm">
       <ExcludedFromBuild Condition="'$(XcrtEnabled)'!='true' or '$(Platform)'!='x64'">true</ExcludedFromBuild>
     </MASM>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='Win32'">
+    <ClCompile Include="..\..\batch_1.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_2.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_3.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_4.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_5.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_6.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_7.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_8.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_9.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_10.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_11.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_12.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_13.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_14.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_15.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_16.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_17.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_18.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_19.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_20.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_21.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_22.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_23.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_24.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_25.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_26.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_27.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_28.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_29.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_30.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_31.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_32.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_33.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_34.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_35.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_36.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_37.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_38.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_39.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_40.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_41.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_42.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_43.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_44.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_45.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_46.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_47.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_48.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_49.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_50.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_51.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_52.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_53.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_54.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_55.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_56.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_57.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\batch_58.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\audio_clock.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\level_code_registry.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\dispatch.cpp"><CompileAs>CompileAsCpp</CompileAs></ClCompile>
+    <ClCompile Include="..\..\..\..\xport\src\xport_fmv.c" />
+    <ClInclude Include="..\..\game_functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets"><Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" /></ImportGroup>
