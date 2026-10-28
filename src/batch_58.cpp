@@ -6,6 +6,16 @@
 /* Three original game slots share one atomic native save file */
 enum { G3_SLOT_BYTES = 0xe4, G3_SLOT_COUNT = 3, G3_SAVE_BYTES = 8 + G3_SLOT_BYTES * G3_SLOT_COUNT };
 
+sint32 G3NativeAutosaveGame(uint32 game, uint32 guest_stack)
+{
+    uint32 state = r_u32(game + 0x67e8);
+    if (r_u8(game + 0x68f8) != 0 || r_u32(state + 0x38) == 0xffffffff)
+        return 0;
+    sint32 result = G3NativeSaveGame(state, guest_stack);
+    w_u32(state + 0x40, (uint32)result);
+    return result;
+}
+
 static sint32 G3ReadSaveSlots(uint8 *slots)
 {
     uint8 stored[G3_SAVE_BYTES];

@@ -1913,6 +1913,7 @@ uint32 G3Function80068C1C(uint32 context, uint32 argument, uint32 event, uint32 
 uint32 G3Function800698C4(uint32 context, uint32 callback, uint32 data, uint32 argument, uint32 incoming_v0, uint32 guest_stack);
 uint32 G3Function80069000(uint32 context, uint32 selection, uint32 incoming_third_glyph, uint32 guest_stack);
 sint32 G3NativeSaveGame(uint32 state, uint32 guest_stack);
+sint32 G3NativeAutosaveGame(uint32 game, uint32 guest_stack);
 sint32 G3NativeLoadGame(uint32 state, uint32 guest_stack);
 uint32 G3NativeSaveResultPage(uint32 context, uint32 callback, uint32 incoming_third_glyph, uint32 guest_stack);
 uint32 G3Function800694B4(uint32 context, uint32 selected, uint32 event, uint32 guest_stack);

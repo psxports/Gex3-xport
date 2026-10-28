@@ -110,7 +110,6 @@ uint32 G3Function80069764(uint32 context, uint32 selected, uint32 event, uint32 
     uint32 state = G3Function8006A600(context);
     G3Function8006A654(3, 0);
     w_u32(state + 0xc, 1);
-    w_u32(state + 0x38, 0);
     sint32 result = G3NativeSaveGame(state, frame);
     w_u32(state + 0x40, (uint32)result);
     w_u32(state + 0x30, 1);

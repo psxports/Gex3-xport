@@ -1761,7 +1761,6 @@ uint32 G3Function8006D670(uint32 game)
 
 uint32 G3Function8006D6A0(uint32 object, uint32 game, uint32 data, uint32 controls, uint32 guest_stack)
 {
-    FUNCTION_MARKER(0x8006D6A0, "SLUS_008.06");
     uint32 frame = guest_stack - 0x30;
     sint32 initial_phase = r_s16(data + 0xc4);
     uint32 raw_phase = r_u16(data + 0xc4);
@@ -1813,9 +1812,12 @@ uint32 G3Function8006D6A0(uint32 object, uint32 game, uint32 data, uint32 contro
         root = r_u32(0x8009d668);
         name = r_u32(0x8009d66c);
     }
+    sint32 previous_mode = r_s16(game + 0x6780);
     G3Function80027644(root, name, game, frame);
     uint32 result = r_u16(game + 0x69de);
     w_u16(game + 0x69dc, result);
+    if (previous_mode == 0)
+        G3NativeAutosaveGame(game, frame);
     return result;
 }
 

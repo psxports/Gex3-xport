@@ -489,6 +489,8 @@ uint32 G3DispatchEffectInitializer(uint32 target, uint32 effect, uint32 callback
     {
     case 0x80017680:
         return G3Function80017680(effect, callback, storage, guest_stack);
+    case 0x80042230:
+        return G3Function80042230(effect, callback, storage, argument3, guest_stack);
     case 0x80044bc4:
         return G3Function80044BC4(effect, callback, storage, argument3, guest_stack);
     default:

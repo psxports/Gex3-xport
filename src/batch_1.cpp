@@ -1423,7 +1423,6 @@ static sint32 G3PlayFullscreenMovie(uint32 movie)
 
 uint32 G3StateMovie8002E924(uint32 state, uint32 guest_stack)
 {
-    FUNCTION_MARKER(0x8002e924, "SLUS_008.06");
     uint32 frame = guest_stack - 0x68;
     uint32 index = r_u32(state + 8);
     for (uint32 path = 0; path < 2; ++path)
@@ -1452,7 +1451,8 @@ uint32 G3StateMovie8002E924(uint32 state, uint32 guest_stack)
     ++name_bytes;
     {
 #ifndef NDEBUG
-    printf("Playing Movie: \"%s\"\n", (const char *)psx_addr(movie, name_bytes));
+    if (index != 0)
+        printf("Playing Movie: \"%s\"\n", (const char *)psx_addr(movie, name_bytes));
 #endif
     }
     G3MemPackPush8004829C();
@@ -1475,7 +1475,8 @@ uint32 G3StateMovie8002E924(uint32 state, uint32 guest_stack)
     (uint32)DrawSync(0);
     VSync(0);
     // Replace the cinema module player through the shared FMV boundary
-    G3PlayFullscreenMovie(movie);
+    if (index != 0)
+        G3PlayFullscreenMovie(movie);
     G3MemPackPop80048320();
     index = r_u32(state + 8);
     uint32 descriptor = 0x80097050 + (((index << 3) + index) << 3);
